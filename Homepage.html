@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12 Basic Codes in HTML</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@400;500;600&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            background: url('images/background 2.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: black;
+        }
+
+        .header {
+            background-color: lightgreen;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header img {
+            height: 90px; 
+            margin-right: 20px;
+        }
+        .header h1 {
+            flex-grow: 1;
+            font-family: 'Poppins', sans-serif; 
+            font-size: 28px; 
+            margin: 0;
+            text-align: center;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            color: black;
+        }
+
+        .account {
+            position: relative;
+        }
+        .account button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 15px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 40px;
+            right: 0;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .dropdown a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: black;
+            font-size: 14px;
+        }
+        .dropdown a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .grid a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #D1E7FF;
+            height: 120px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: black;
+            font-family: 'Poppins', sans-serif; 
+            font-weight: 500;
+            font-size: 16px; 
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+        .grid a:hover {
+            transform: scale(1.05); 
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+            background-color: #b3d9ff;
+        }
+
+        .footer {
+            background-color: lightgreen;
+            text-align: center;
+            padding: 30px 0; 
+            font-family: 'Roboto', sans-serif; 
+            font-size: 16px; 
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: lightgreen; 
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+            text-align: center;
+        }
+        .modal-content input, .modal-content textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .modal-content button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .modal-content button:hover {
+            background-color: #2980b9;
+        }
+        .close {
+            background-color: transparent;
+            border: none;
+            font-size: 20px;
+            color: #3498db;
+            cursor: pointer;
+        }
+
+        .thank-you-message {
+            display: none;
+            font-size: 18px;
+            color: #27ae60;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="images/logo.png" alt="School Logo">
+        <h1>12 Basic Codes in HTML</h1>
+        <div class="account">
+            <button onclick="toggleDropdown()">My Account</button>
+            <div class="dropdown" id="dropdown">
+                <a href="javascript:void(0);" onclick="openFeedbackModal()">Feedback</a> 
+                <a href="file:///C:/Users/genes/OneDrive/Documents/Publish%20Website%20Genesis/index.html.html" onclick="signOut()">Sign Out</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid">
+        <a href="file:///C:/Users/genes/OneDrive/Documents/Publish%20Website%20Genesis/Heading.html">Heading</a>
+        <a href="file:///C:/Users/genes/OneDrive/Documents/Publish%20Website%20Genesis/Transparent%20Box.html">Transparent Boxes</a>
+        <a href="file:///C:/Users/genes/OneDrive/Documents/Publish%20Website%20Genesis/Linear%20Gradient.html">Linear-gradient<br>Background Image</a>
+        <a href="file:///C:/Users/genes/OneDrive/Documents/Publish%20Website%20Genesis/Add%20audio.html">Add Audio</a>
+        <a href="file:///C:/Users/genes/OneDrive/Documents/Publish%20Website%20Genesis/CSS%20Background.html">CSS Background-color</a>
+        <a href="file:///C:/Users/genes/OneDrive/Documents/Publish%20Website%20Genesis/Translate%20Method.html">The translate() Method</a>
+        <a href="file:///C:/Users/genes/OneDrive/Documents/Publish%20Website%20Genesis/Rotate%20Method.html">The rotate() Method</a>
+        <a href="file:///C:/Users/genes/OneDrive/Documents/Publish%20Website%20Genesis/SkewX%20Method.html">The skewX() Method</a>
+        <a href="file:///C:/Users/genes/OneDrive/Documents/Publish%20Website%20Genesis/Transitioning%20Timing.html">Transitioning-timing</a>
+        <a href="file:///C:/Users/genes/OneDrive/Documents/Publish%20Website%20Genesis/Animation%20Timing.html">Animation-timing</a>
+        <a href="file:///C:/Users/genes/OneDrive/Documents/Publish%20Website%20Genesis/CSS%20Button.html">CSS Button</a>
+        <a href="file:///C:/Users/genes/OneDrive/Documents/Publish%20Website%20Genesis/Add%20Video.html">Add Video</a>
+    </div>
+
+    <div class="footer">
+        &copy; 2025 Blazers | ICT Zuckerberg
+    </div>
+
+    <div id="feedbackModal" class="modal">
+        <div class="modal-content">
+            <button class="close" onclick="closeFeedbackModal()">&times;</button>
+            <h3>Feedback</h3>
+            <form id="feedbackForm" onsubmit="submitFeedback(event)">
+                <textarea rows="4" placeholder="Enter your feedback here..." required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+            <p class="thank-you-message" id="thankYouMessage">Thank you for your feedback!</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdown');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function openFeedbackModal() {
+            document.getElementById('feedbackModal').style.display = 'flex';
+        }
+
+        function closeFeedbackModal() {
+            document.getElementById('feedbackModal').style.display = 'none';
+        }
+
+        function submitFeedback(event) {
+            event.preventDefault(); // Prevent form submission to server
+
+            // Show thank you message and hide the feedback form
+            document.getElementById('feedbackForm').style.display = 'none';
+            document.getElementById('thankYouMessage').style.display = 'block';
+
+            // You can further process the feedback here, like sending it to a server
+        }
+
+        function signOut() {
+            window.location.href = 'signout_page.html';
+        }
+
+        document.addEventListener('click', function (event) {
+            const dropdown = document.getElementById('dropdown');
+            const button = document.querySelector('.account button');
+            if (!dropdown.contains(event.target) && event.target !== button) {
+                dropdown.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
